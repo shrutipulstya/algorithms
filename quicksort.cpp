@@ -22,7 +22,7 @@ int partition(int *A, int start, int end)
                 part_index++;
             }
         }
-        swap(A, part_index ,end);
+        swap(A, part_index ,end);  
         return part_index;
 
     }
@@ -30,7 +30,7 @@ int partition(int *A, int start, int end)
 
 void quicksort(int *A, int start, int end)
     {
-        if(start <= end)
+        if(start < end)
         {
             int part_index = partition(A,start,end);
             quicksort( A, start, part_index-1 );
