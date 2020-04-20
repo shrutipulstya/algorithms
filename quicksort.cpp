@@ -24,25 +24,24 @@ int partition(int *A, int start, int end)
         }
         swap(A, part_index ,end);  
         return part_index;
-
     }
 }
 
 void quicksort(int *A, int start, int end)
+{
+    if(start < end)
     {
-        if(start < end)
-        {
-            int part_index = partition(A,start,end);
-            quicksort( A, start, part_index-1 );
-            quicksort( A, part_index+1, end );
-        }
+        int part_index = partition(A,start,end);
+        quicksort( A, start, part_index-1 );
+        quicksort( A, part_index+1, end );
     }
+}
 
 int  main()
 {
-    int A[] = {2};
-    quicksort(A, 0, 1);
-    for(int i =0; i < 1; i++)
+    int A[] = {2,9,3,6,3};
+    quicksort(A, 0, 4);
+    for(int i =0; i < 5; i++)
     cout<<A[i]<<" ";
     return 0;
 }
